@@ -1,3 +1,19 @@
-.logo {
-    font-family: 'Grand Hotel', cursive; 
+.searchBar {
+    display: flex;
+    align-items: center;
+}
+
+.ig-header {
+    font-family: 'Grand Hotel', cursive;
+    border-left: 1px solid lightgray;
+    padding-left: 2%; 
+}
+
+.ig-logo {
+    width: 5%;
+    padding-right: 2%;
+}
+
+.searchInput {
+    margin: 0 auto;
 }
