@@ -5,10 +5,8 @@ import './CommentSection.css'
 function CommentSection (props) {
     return (
         <div>
-            { props.posts.map(comment => {
-                return comment.comments.map((post) => {
-                    return <p className="comment" key= { post }> <span>{ post.username }</span> { post.text } </p>
-                }) 
+            { props.posts.map((comment, index) => {
+                return <p key={index}><span>{ comment.username }</span> { comment.text }</p>
             })}
         </div>
     )

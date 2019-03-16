@@ -7,15 +7,15 @@ import CommentSection from '../CommentSection/CommentSection';
 function PostContainer (props) {
     return (
         <div>
-            {props.data.map(entry => {
-               return <div className="postContainer">
+            {props.data.map((entry, index) => {
+               return <div className="postContainer" key={ index }>
                         <header className="igHeader">
-                            <img src={entry.thumbnailUrl} alt="thumbnail" />
-                            {entry.username}
+                            <img src={ entry.thumbnailUrl } alt="thumbnail" />
+                            { entry.username }
                         </header>
-                        <img src={entry.imageUrl} alt="img"/>
+                        <img src={ entry.imageUrl } alt="img"/>
 
-                        <CommentSection posts={ props.data }/>
+                        <CommentSection posts={ entry.comments }/>
                      </div>
             })}
         </div>
