@@ -18,9 +18,6 @@ function PostContainer (props) {
                         <CommentSection posts={ props.data }/>
                      </div>
             })}
-
-            
-            
         </div>
     )
 }
