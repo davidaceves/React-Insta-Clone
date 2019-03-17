@@ -14,8 +14,8 @@ function PostContainer (props) {
                             { entry.username }
                         </header>
                         <img src={ entry.imageUrl } alt="img"/>
-
-                        <CommentSection posts={ entry.comments }/>
+                        
+                        <CommentSection posts={ entry.comments } likes={ entry.likes }/>
                      </div>
             })}
         </div>
