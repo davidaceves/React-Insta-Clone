@@ -14,14 +14,19 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.setState({ dummyData: dummyData})
+    this.setState({ dummyData: dummyData })
   }
+
+  inputHandler = event => {
+    this.setState({ [event.target.text]: event.target.value });
+  };
 
   render() {
     return (
       <div className="App">
         <SearchBar />
-        <PostContainer data={this.state.dummyData} />
+        <PostContainer data={this.state.dummyData} inputHandler={ this.inputHandler }/>
+
       </div>
     );
   }

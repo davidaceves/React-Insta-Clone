@@ -2,6 +2,10 @@
     margin: 2%;
 }
 
+.commentBox input {
+    border: none;
+}
+
 span {
     font-weight: bold;
 }

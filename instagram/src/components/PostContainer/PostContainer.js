@@ -15,7 +15,7 @@ function PostContainer (props) {
                         </header>
                         <img src={ entry.imageUrl } alt="img"/>
                         
-                        <CommentSection posts={ entry.comments } likes={ entry.likes }/>
+                        <CommentSection posts={ entry.comments } likes={ entry.likes } inputHandler={ props.inputHandler }/>
                      </div>
             })}
         </div>
