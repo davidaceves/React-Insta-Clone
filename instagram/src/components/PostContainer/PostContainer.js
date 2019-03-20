@@ -22,4 +22,14 @@ function PostContainer (props) {
     )
 }
 
+PostContainer.propTypes = {
+    data: PropTypes.arrayOf(
+        PropTypes.shape({
+        username: PropTypes.string,
+        imageUrl: PropTypes.string,
+        thumbnailUrl: PropTypes.string
+        })
+    )
+}
+
 export default PostContainer;
