@@ -17,6 +17,7 @@ function CommentSection (props) {
 
             <form className="commentBox" onSubmit={ addNewComment }>
                 <input type="text" placeholder="Add a comment..." value={ props.posts.text } name="comment" onChange={ props.inputHandler }></input>
+                <button type="submit">Post</button>
             </form>
         </div>
     )
@@ -27,8 +28,17 @@ function CommentSection (props) {
 function addNewComment (event, index) {
     event.preventDefault();
 
-
-
+    this.setState(prevState => {
+        return  {
+            comments: [
+                ...prevState.comments,
+                {
+                    username: 'Coolguy123',
+                    text: prevState.comment
+                }
+            ]
+        };
+    });
 }
 
 CommentSection.propTypes = {
