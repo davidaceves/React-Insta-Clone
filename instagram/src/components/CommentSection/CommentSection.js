@@ -19,6 +19,8 @@ function CommentSection (props) {
 }
 
 CommentSection.propTypes = {
+    likes: PropTypes.number,
+
     posts: PropTypes.arrayOf(
         PropTypes.shape({
             username: PropTypes.string,
