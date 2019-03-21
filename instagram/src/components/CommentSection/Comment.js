@@ -14,11 +14,6 @@ function Comment (props) {
             { props.posts.map((comment, index) => {
                 return <p key={index}><span>{ comment.username }</span> { comment.text }</p>
             })}
-
-            <form className="commentBox" onSubmit={ addNewComment }>
-                <input type="text" placeholder="Add a comment..." value={ props.posts.text } name="comment" onChange={ props.inputHandler }></input>
-                <button type="submit">Post</button>
-            </form>
         </div>
     )
 }
@@ -33,3 +28,5 @@ Comment.propTypes = {
         })
     )
 }
+
+export default Comment;

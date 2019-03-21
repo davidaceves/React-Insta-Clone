@@ -17,7 +17,6 @@ class App extends Component {
     this.setState({ dummyData: dummyData })
   }
 
-
   render() {
     return (
       <div className="App">

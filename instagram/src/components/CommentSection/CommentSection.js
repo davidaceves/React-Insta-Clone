@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import dummyData from '../../dummy-data';
 import './CommentSection.css'
+// import Comment from './Comment'
 import PropTypes from "prop-types";
+import CommentInput from './CommentInput';
 
-// MAkE INTO A CLASS
-class CommentSection extends React.Component  {
+class CommentSection extends Component  {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-          dummyData: [],
+          comments: props.comments,
+          comment: ''
         }
       }
 
@@ -21,47 +23,30 @@ class CommentSection extends React.Component  {
       inputHandler = event => {
         this.setState({ [event.target.text]: event.target.value });
       };
-      
-      
+
+      addNewComment = event => {
+        event.preventDefault();
+    
+        this.setState(prevState => {
+            return  {
+                comments: [
+                    ...prevState.comments,
+                    {
+                        username: 'Coolguy123',
+                        text: prevState.text
+                    }
+                ]
+            };
+        });
+    }
 
     render() {
         return (
-            <div className="comments">
-                <img className="heart-icon" src={ require("./img/heart_icon.png") } alt="icon" />
-                <img className="speech-icon" src={ require("./img/speech_icon.png") } alt="icon" />
-
-                {/* <p><span>{ this.state.dummyData } likes</span></p> */}
-                
-                { this.state.dummyData.comments.map((comment, index) => {
-                    console.log(comment)
-                    return <p key={index}><span>{ comment.username }</span> { comment.text }</p>
-                })}
-
-                <form className="commentBox" onSubmit={ addNewComment }>
-                    <input type="text" placeholder="Add a comment..." value={ this.state.dummyData.text } name="comment" onChange={ this.inputHandler }></input>
-                    <button type="submit">Post</button>
-                </form>
+            <div>
+                 <CommentInput addNewComment={ this.addNewComment } inputHandler={ this.inputHandler } comments={this.state.comments} />
             </div>
         )
         }
-}
-
-
-
-function addNewComment (event, index) {
-    event.preventDefault();
-
-    this.setState(prevState => {
-        return  {
-            comments: [
-                ...prevState.comments,
-                {
-                    username: 'Coolguy123',
-                    text: prevState.comment
-                }
-            ]
-        };
-    });
 }
 
 CommentSection.propTypes = {
