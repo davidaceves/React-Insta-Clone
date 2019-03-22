@@ -22,7 +22,7 @@ class CommentSection extends Component  {
       }
     
       inputHandler = event => {
-        this.setState({ [event.target.text]: event.target.value });
+        this.setState({ comment: event.target.value });
       };
 
       addNewComment = event => {
@@ -36,7 +36,7 @@ class CommentSection extends Component  {
                         username: 'Coolguy123',
                         text: prevState.comment
                     }
-                ]
+                ] , comment: ''
             };
         });
     }
@@ -47,7 +47,7 @@ class CommentSection extends Component  {
                   
                  <Comment likes={ this.state.likes } posts={ this.state.comments} />
                  
-                 <CommentInput addNewComment={ this.addNewComment } inputHandler={ this.inputHandler } comments={this.state.comments} />
+                 <CommentInput addNewComment={ this.addNewComment } inputHandler={ this.inputHandler } comments={this.state.comment} />
             </div>
         )
         }
