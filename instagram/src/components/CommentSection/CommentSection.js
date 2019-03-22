@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import dummyData from '../../dummy-data';
+
 import './CommentSection.css'
 import Comment from './Comment'
 import PropTypes from "prop-types";
@@ -13,24 +13,31 @@ class CommentSection extends Component  {
         this.state = {
           likes: props.likes,
           comments: props.comments,
-          comment: ''
+          comment: '',
+          bool: false
         }
       }
-
-      componentDidMount() {
-        this.setState({ dummyData: dummyData })
-      }
-    
+      
       inputHandler = event => {
         this.setState({ comment: event.target.value });
       };
 
       incrementHeart = () => {
-          this.setState(prevState => {
-              return {
-                  likes: prevState.likes + 1
-              }
-          })
+          if (this.state.bool === false) {
+            this.setState(prevState => {
+                prevState.bool = !prevState.bool;
+                return {
+                    likes: prevState.likes + 1
+                } 
+            })
+          } else {
+              this.setState(prevState => {
+                    prevState.bool = !prevState.bool;
+                    return {
+                        likes: prevState.likes - 1
+                    } 
+            })  
+          }  
       }
 
       addNewComment = event => {
