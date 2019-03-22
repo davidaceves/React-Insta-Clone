@@ -25,6 +25,14 @@ class CommentSection extends Component  {
         this.setState({ comment: event.target.value });
       };
 
+      incrementHeart = () => {
+          this.setState(prevState => {
+              return {
+                  likes: prevState.likes + 1
+              }
+          })
+      }
+
       addNewComment = event => {
         event.preventDefault();
     
@@ -33,7 +41,7 @@ class CommentSection extends Component  {
                 comments: [
                     ...prevState.comments,
                     {
-                        username: 'Coolguy123',
+                        username: 'DAceves',
                         text: prevState.comment
                     }
                 ] , comment: ''
@@ -45,7 +53,7 @@ class CommentSection extends Component  {
         return (
             <div>
                   
-                 <Comment likes={ this.state.likes } posts={ this.state.comments} />
+                 <Comment likes={ this.state.likes } posts={ this.state.comments} addHeart={ this.incrementHeart }/>
                  
                  <CommentInput addNewComment={ this.addNewComment } inputHandler={ this.inputHandler } comments={this.state.comment} />
             </div>

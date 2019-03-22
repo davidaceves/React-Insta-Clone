@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 function Comment (props) {
     return (
         <div className="comments">
-            <img className="heart-icon" src={ require("./img/heart_icon.png") } alt="icon" />
+            <img onClick={ props.addHeart } className="heart-icon" src={ require("./img/heart_icon.png") } alt="icon" />
             <img className="speech-icon" src={ require("./img/speech_icon.png") } alt="icon" />
 
             <p><span>{ props.likes } likes</span></p>
