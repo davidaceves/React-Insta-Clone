@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import dummyData from '../../dummy-data';
 import './CommentSection.css'
-// import Comment from './Comment'
+import Comment from './Comment'
 import PropTypes from "prop-types";
 import CommentInput from './CommentInput';
 
@@ -11,6 +11,7 @@ class CommentSection extends Component  {
     constructor(props) {
         super(props);
         this.state = {
+          likes: props.likes,
           comments: props.comments,
           comment: ''
         }
@@ -33,7 +34,7 @@ class CommentSection extends Component  {
                     ...prevState.comments,
                     {
                         username: 'Coolguy123',
-                        text: prevState.text
+                        text: prevState.comment
                     }
                 ]
             };
@@ -43,6 +44,9 @@ class CommentSection extends Component  {
     render() {
         return (
             <div>
+                  
+                 <Comment likes={ this.state.likes } posts={ this.state.comments} />
+                 
                  <CommentInput addNewComment={ this.addNewComment } inputHandler={ this.inputHandler } comments={this.state.comments} />
             </div>
         )

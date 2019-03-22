@@ -2,8 +2,7 @@ import React from 'react';
 
 import './PostContainer.css';
 import PropTypes from "prop-types";
-import Comment from '../CommentSection/Comment';
-import CommentInput from '../CommentSection/CommentInput';
+import CommentSection from '../CommentSection/CommentSection';
 
 function PostContainer (props) {
     return (
@@ -16,8 +15,7 @@ function PostContainer (props) {
                         </header>
                         <img src={ entry.imageUrl } alt="img"/>
                     
-                        <Comment likes={ entry.likes } posts={ entry.comments} />
-                        <CommentInput />
+                        <CommentSection comments={entry.comments} likes={entry.likes} />
                      </div>
             })}
         </div>
