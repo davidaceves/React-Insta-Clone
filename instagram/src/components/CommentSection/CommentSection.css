@@ -1,0 +1,21 @@
+.comments {
+    margin: 2%;
+}
+
+.commentBox input {
+    border: none;
+}
+
+span {
+    font-weight: bold;
+}
+
+.speech-icon  {
+    width: 40px;
+    cursor: pointer;
+}
+
+.heart-icon {
+    width: 40px;
+    cursor: pointer;
+}

@@ -1,0 +1,32 @@
+.searchBar {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 5%;
+}
+
+.ig-header {
+    font-family: 'Grand Hotel', cursive;
+    border-left: 1px solid lightgray;
+    padding-left: 2%; 
+}
+
+.ig-logo {
+    width: 5%;
+    padding-right: 2%;
+}
+
+.searchInput {
+    margin: 0 auto;
+    background: rgb(241, 241, 241);
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+.searchInput input {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    height: 20px;
+    text-align: center;
+    background: url(img/magnifying_icon_test.png) no-repeat 40px;
+}
